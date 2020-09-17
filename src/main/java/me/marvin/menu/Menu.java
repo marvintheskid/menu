@@ -62,6 +62,7 @@ public abstract class Menu implements InventoryHolder {
      * This method opens this menu for the given player.
      *
      * @param player the player
+     * @throws IllegalArgumentException if the menu's size is not acceptable
      * @throws IndexOutOfBoundsException if one of the button's position is out of range (should be between 0 and 53)
      */
     public final void openMenu(@NotNull Player player) {
@@ -70,12 +71,12 @@ public abstract class Menu implements InventoryHolder {
         title = ChatColor.translateAlternateColorCodes(ALTERNATE_COLOR_CHAR, title);
 
         int size = getSize(player);
-        Preconditions.checkArgument(size % 9 != 0, "menu size");
+        Preconditions.checkArgument(size > 54 || size < 9 || size % 9 != 0, "menu size");
 
         inventory = Bukkit.createInventory(this, size, title);
 
         for (Map.Entry<Integer, Button> entry : getButtons(player).entrySet()) {
-            Preconditions.checkPositionIndex(entry.getKey(), 53, "button position");
+            Preconditions.checkPositionIndex(entry.getKey(), size - 1, "button position");
             inventory.setItem(entry.getKey(), entry.getValue().getItem());
         }
 
