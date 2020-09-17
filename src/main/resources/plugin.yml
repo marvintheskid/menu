@@ -1,0 +1,5 @@
+author: marvin
+main: me.marvin.menu.standalone.StandaloneMenuBootstrap
+version: 1.0
+website: https://github.com/marvintheskid/menu
+description: A simplistic Bukkit GUI / Menu API using the InventoryHolder interface.
