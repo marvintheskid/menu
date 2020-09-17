@@ -39,7 +39,7 @@ public abstract class Menu implements InventoryHolder {
      * @param player the player
      * @return the buttons used by this menu
      */
-    @NotNull public abstract Map<Integer, Button> getButtons(Player player);
+    @NotNull public abstract Map<Integer, Button> getButtons(@NotNull Player player);
 
     /**
      * This method returns the title of this menu.
@@ -47,7 +47,7 @@ public abstract class Menu implements InventoryHolder {
      * @param player the player
      * @return the title of this menu
      */
-    @NotNull public abstract String getMenuTitle(Player player);
+    @NotNull public abstract String getMenuTitle(@NotNull Player player);
 
     /**
      * With this method you can define the inventory's size.
@@ -56,7 +56,7 @@ public abstract class Menu implements InventoryHolder {
      * @return the desired inventory size
      * @throws IllegalArgumentException if the size is not a multiple of 9
      */
-    public abstract int getSize(Player player);
+    public abstract int getSize(@NotNull Player player);
 
     /**
      * This method opens this menu for the given player.
@@ -64,7 +64,7 @@ public abstract class Menu implements InventoryHolder {
      * @param player the player
      * @throws IndexOutOfBoundsException if one of the button's position is out of range (should be between 0 and 53)
      */
-    public final void openMenu(Player player) {
+    public final void openMenu(@NotNull Player player) {
         String title = getMenuTitle(player);
         title = title.substring(0, Math.min(title.length(), 32));
         title = ChatColor.translateAlternateColorCodes(ALTERNATE_COLOR_CHAR, title);
