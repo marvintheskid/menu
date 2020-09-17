@@ -65,8 +65,12 @@ public abstract class Menu implements InventoryHolder {
     public final void openMenu(Player player) {
         String title = getMenuTitle(player);
         title = title.substring(0, Math.min(title.length(), 32));
+        title = ChatColor.translateAlternateColorCodes(ChatColor.COLOR_CHAR, title);
 
-        inventory = Bukkit.createInventory(this, getSize(player), ChatColor.translateAlternateColorCodes(ChatColor.COLOR_CHAR, title));
+        int size = getSize(player);
+        Preconditions.checkArgument(size % 9 != 0, "menu size");
+
+        inventory = Bukkit.createInventory(this, size, title);
 
         for (Map.Entry<Integer, Button> entry : getButtons(player).entrySet()) {
             Preconditions.checkPositionIndex(entry.getKey(), 53, "button position");
