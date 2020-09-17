@@ -26,6 +26,8 @@ import java.util.Map;
  * @see Button
  */
 public abstract class Menu implements InventoryHolder {
+    private static final char ALTERNATE_COLOR_CHAR = '&';
+
     /**
      * The inventory held by this object.
      */
@@ -65,7 +67,7 @@ public abstract class Menu implements InventoryHolder {
     public final void openMenu(Player player) {
         String title = getMenuTitle(player);
         title = title.substring(0, Math.min(title.length(), 32));
-        title = ChatColor.translateAlternateColorCodes(ChatColor.COLOR_CHAR, title);
+        title = ChatColor.translateAlternateColorCodes(ALTERNATE_COLOR_CHAR, title);
 
         int size = getSize(player);
         Preconditions.checkArgument(size % 9 != 0, "menu size");

@@ -19,7 +19,7 @@ import java.util.function.Consumer;
  */
 public interface ButtonEvent extends Consumer<InventoryClickEvent> {
     /**
-     * A simple {@link ButtonEvent} which cancels every interaction given toward to the desired button
+     * A simple {@link ButtonEvent} which cancels every interaction given towards the desired button
      */
     ButtonEvent CANCELLING_EVENT = (evt) -> evt.setCancelled(true);
 
