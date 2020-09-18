@@ -7,12 +7,14 @@ You need to create an object which extends **Menu** first:
 ```java
 public class DummyMenu extends Menu {
     @Override
-    public @NotNull Map<Integer, Button> getButtons(@NotNull Player player) {
+    @NotNull 
+    public Map<Integer, Button> getButtons(@NotNull Player player) {
         ...
     }
 
     @Override
-    public @NotNull String getMenuTitle(@NotNull Player player) {
+    @NotNull
+    public String getMenuTitle(@NotNull Player player) {
         ...
     }
 
