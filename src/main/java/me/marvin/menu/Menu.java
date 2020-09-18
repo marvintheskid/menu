@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * An abstract menu class which holds an inventory created using the
- * {@linkplain Bukkit#createInventory(InventoryHolder, int)} method.
+ * {@link Bukkit#createInventory(InventoryHolder, int)} method.
  * Using this method we can check if the clicked inventory's holder
  * is a {@link Menu}.
  *
@@ -74,13 +74,25 @@ public abstract class Menu implements InventoryHolder {
         Preconditions.checkArgument(size > 54 || size < 9 || size % 9 != 0, "menu size");
 
         inventory = Bukkit.createInventory(this, size, title);
-
-        for (Map.Entry<Integer, Button> entry : getButtons(player).entrySet()) {
-            Preconditions.checkPositionIndex(entry.getKey(), size - 1, "button position");
-            inventory.setItem(entry.getKey(), entry.getValue().getItem());
-        }
+        refreshMenu(player);
 
         player.openInventory(inventory);
+    }
+
+    /**
+     * This method (re)initiates the the buttons of this menu.
+     *
+     * @param player the player
+     * @throws NullPointerException if the inventory was not opened before
+     */
+    public final void refreshMenu(@NotNull Player player) {
+        Preconditions.checkNotNull(inventory, "refresh");
+
+        inventory.clear();
+        for (Map.Entry<Integer, Button> entry : getButtons(player).entrySet()) {
+            Preconditions.checkPositionIndex(entry.getKey(), inventory.getSize() - 1, "button position");
+            inventory.setItem(entry.getKey(), entry.getValue().getItem());
+        }
     }
 
     /**
