@@ -19,7 +19,6 @@ import java.util.Map;
  * is a {@link Menu}.
  *
  * @author marvin
- * @since 1.0
  *
  * @see ButtonInteractionListener
  * @see InventoryHolder

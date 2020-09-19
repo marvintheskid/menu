@@ -12,7 +12,6 @@ import java.util.function.Function;
  * A simple {@link Menu} implementation powered by functions.
  *
  * @author marvin
- * @version 1.0
  *
  * @see Menu
  */

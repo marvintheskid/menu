@@ -13,7 +13,6 @@ import java.util.function.Consumer;
  * The interface itself extends {@link Consumer} for more extensibility.
  *
  * @author marvin
- * @since 1.0
  *
  * @see ButtonInteractionListener
  * @see Consumer

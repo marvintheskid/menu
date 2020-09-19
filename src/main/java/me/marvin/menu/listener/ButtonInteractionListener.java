@@ -14,7 +14,6 @@ import org.bukkit.inventory.Inventory;
  * without this listener, because this handles the interaction with the buttons.
  *
  * @author marvin
- * @since 1.0
  *
  * @see Menu
  * @see ButtonEvent

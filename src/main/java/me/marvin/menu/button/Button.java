@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
  * Represents an element in a {@link Menu}.
  *
  * @author marvin
- * @since 1.0
  *
  * @see ButtonInteractionListener
  * @see ButtonEvent

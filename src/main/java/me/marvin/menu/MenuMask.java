@@ -13,7 +13,6 @@ import java.util.function.Function;
  * This utility helps filling the button set of a {@link Menu}.
  *
  * @author marvin
- * @version 1.0
  *
  * @see Menu
  */
