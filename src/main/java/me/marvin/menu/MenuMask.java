@@ -21,7 +21,7 @@ public class MenuMask {
     private String[] rows;
 
     /**
-     * Describes the shape of this mask.
+     * Sets the shape of this mask.
      *
      * @param shape the shape of the mask
      * @return this mask
