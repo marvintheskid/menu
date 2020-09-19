@@ -1,6 +1,5 @@
 package me.marvin.menu.standalone;
 
-import me.marvin.menu.button.impl.SimpleButton;
 import me.marvin.menu.listener.ButtonInteractionListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
