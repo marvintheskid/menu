@@ -67,11 +67,13 @@ public abstract class Menu implements InventoryHolder {
      */
     public final void openMenu(@NotNull Player player) {
         String title = getMenuTitle(player);
-        title = title.substring(0, Math.min(title.length(), 32));
+        title = title.substring(0, Math.min(title.length(), 31));
         title = ChatColor.translateAlternateColorCodes(ALTERNATE_COLOR_CHAR, title);
 
         int size = getSize(player);
-        Preconditions.checkArgument(size > 54 || size < 9 || size % 9 != 0, "menu size");
+        Preconditions.checkArgument(size % 9 == 0, "menu size must be a multiple of 9");
+        Preconditions.checkArgument(size < 54, "menu size must be smaller than 54");
+        Preconditions.checkArgument(size > 9, "menu size must be larger than 9");
 
         inventory = Bukkit.createInventory(this, size, title);
         refreshMenu(player);
