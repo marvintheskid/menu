@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * A simple {@link Menu} implementation powered by functional suppliers.
+ * A simple {@link Menu} implementation powered by functions.
  *
  * @author marvin
  * @version 1.0
