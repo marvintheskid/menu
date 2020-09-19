@@ -34,7 +34,7 @@ public abstract class Menu implements InventoryHolder {
     private Inventory inventory;
 
     /**
-     * This method returns the buttons used by this menu.
+     * Returns the buttons used by this {@linkplain Menu}.
      *
      * @param player the player
      * @return the buttons used by this menu
@@ -42,7 +42,7 @@ public abstract class Menu implements InventoryHolder {
     @NotNull public abstract Map<Integer, Button> getButtons(@NotNull Player player);
 
     /**
-     * This method returns the title of this menu.
+     * Returns the title of this {@linkplain Menu}.
      *
      * @param player the player
      * @return the title of this menu
@@ -50,7 +50,7 @@ public abstract class Menu implements InventoryHolder {
     @NotNull public abstract String getMenuTitle(@NotNull Player player);
 
     /**
-     * With this method you can define the inventory's size.
+     * Returns the desired inventory size.
      *
      * @param player the player
      * @return the desired inventory size
@@ -59,7 +59,7 @@ public abstract class Menu implements InventoryHolder {
     public abstract int getSize(@NotNull Player player);
 
     /**
-     * This method opens this menu for the given player.
+     * This method opens this {@linkplain Menu} for the given player.
      *
      * @param player the player
      * @throws IllegalArgumentException if the menu's size is not acceptable
@@ -80,7 +80,7 @@ public abstract class Menu implements InventoryHolder {
     }
 
     /**
-     * This method (re)initiates the the buttons of this menu.
+     * This method (re)initiates the the buttons of this {@linkplain Menu}.
      *
      * @param player the player
      * @throws NullPointerException if the inventory was not opened before
@@ -96,7 +96,7 @@ public abstract class Menu implements InventoryHolder {
     }
 
     /**
-     * This method returns this object's inventory.
+     * Returns the inventory held by this {@linkplain Menu}.
      *
      * @return the inventory held by this menu
      */

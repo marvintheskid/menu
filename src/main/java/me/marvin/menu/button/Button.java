@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This object represents an element in a {@link Menu}
+ * Represents an element in a {@link Menu}.
  *
  * @author marvin
  * @since 1.0
@@ -16,14 +16,14 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface Button {
     /**
-     * This method returns the {@link ItemStack} of this button.
+     *  Returns the {@link ItemStack} of this button.
      *
      * @return the item
      */
     @NotNull ItemStack getItem();
 
     /**
-     * This method returns the button's {@link ButtonEvent}.
+     * Returns the button's {@link ButtonEvent}.
      * By default, this method returns a {@linkplain ButtonEvent#NOOP_EVENT}.
      *
      * @return the event assigned to this button

@@ -6,8 +6,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import java.util.function.Consumer;
 
 /**
- * This interface handles all the interactions made by the player on a button.
- *
+ * Handles all the interactions made by the player on a button.
  * The interface itself extends {@link Consumer} for more extensibility.
  *
  * @author marvin
