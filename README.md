@@ -2,6 +2,11 @@
 A simplistic Bukkit GUI / Menu API using the InventoryHolder interface.
 
 ## Usage
+### Basics
+Registering the [ButtonInteractionListener](src/main/java/me/marvin/menu/listener/ButtonInteractionListener.java) is required, otherwise the API will malfunction.
+```java
+Bukkit.getPluginManager().registerEvents(new ButtonInteractionListener(), instance);
+```
 ### Creating your first menu
 You need to create an object which extends **Menu** first:
 ```java
@@ -30,4 +35,29 @@ You should create a new instance of the desired menu every time, because most of
     Player player = ...;
     new DummyMenu().openMenu(player);
     ...
+```
+### Creating buttons
+Creating a [Button](src/main/java/me/marvin/menu/button/Button.java) is simple:
+```java
+public class DummyButton implements Button {
+    @Override
+    @NotNull
+    public ItemStack getItem() {
+        ...
+    }
+
+    @Override
+    @NotNull
+    public ButtonEvent getEvent() {
+        ...
+    }
+
+    @Override
+    public boolean isStrict() {
+        ...
+    }
+```
+The Button#getEvent() and the Button#isStrict() method have a default value, therefore you can use the Button interface as a functional interface:
+```java
+Button btn = () -> ...;
 ```
