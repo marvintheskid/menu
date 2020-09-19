@@ -8,7 +8,7 @@ Registering the [ButtonInteractionListener](src/main/java/me/marvin/menu/listene
 Bukkit.getPluginManager().registerEvents(new ButtonInteractionListener(), instance);
 ```
 ### Creating your first menu
-You need to create an object which extends **Menu** first:
+You need to create an object which extends [Menu](src/main/java/me/marvin/menu/Menu.java) first:
 ```java
 public class DummyMenu extends Menu {
     @Override
