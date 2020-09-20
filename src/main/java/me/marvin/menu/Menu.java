@@ -66,7 +66,7 @@ public abstract class Menu implements InventoryHolder {
      */
     public final void openMenu(@NotNull Player player) {
         String title = getMenuTitle(player);
-        title = title.substring(0, Math.min(title.length(), 31));
+        title = title.substring(0, Math.min(title.length(), 32));
         title = ChatColor.translateAlternateColorCodes(ALTERNATE_COLOR_CHAR, title);
 
         int size = getSize(player);
