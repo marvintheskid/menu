@@ -71,8 +71,8 @@ public abstract class Menu implements InventoryHolder {
 
         int size = getSize(player);
         Preconditions.checkArgument(size % 9 == 0, "menu size must be a multiple of 9");
-        Preconditions.checkArgument(size < 54, "menu size must be smaller than 54");
-        Preconditions.checkArgument(size > 9, "menu size must be larger than 9");
+        Preconditions.checkArgument(size <= 54, "menu size must be smaller than 54");
+        Preconditions.checkArgument(size >= 9, "menu size must be larger than 9");
 
         inventory = Bukkit.createInventory(this, size, title);
         refreshMenu(player);
