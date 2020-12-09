@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
 
 group 'me.marvin'
 version '1.0-SNAPSHOT'
@@ -29,7 +30,7 @@ repositories {
 
 ext {
     spigotVersion = '1.8.8-R0.1-SNAPSHOT'
-    annotationsVersion = '16.0.2'
+    annotationsVersion = '20.1.0'
 }
 
 dependencies {
