@@ -15,6 +15,8 @@ import java.util.function.Function;
  * @author marvin
  *
  * @see Menu
+ *
+ * @since 1.0
  */
 public class MenuMask {
     private final Map<Character, Function<Player, Button>> mappedCharacters = new HashMap<>();

@@ -17,6 +17,8 @@ import java.util.function.Consumer;
  * @see ButtonInteractionListener
  * @see Consumer
  * @see Button
+ *
+ * @since 1.0
  */
 public interface ButtonEvent extends Consumer<InventoryClickEvent> {
     /**
@@ -32,6 +34,18 @@ public interface ButtonEvent extends Consumer<InventoryClickEvent> {
      */
     ButtonEvent NOOP_EVENT = (evt) -> {};
 
+    /**
+     * Returns a composed {@code ButtonEvent} that performs, in sequence, this
+     * operation followed by the {@code after} operation. If performing either
+     * operation throws an exception, it is relayed to the caller of the
+     * composed operation.  If performing this operation throws an exception,
+     * the {@code after} operation will not be performed.
+     *
+     * @param after the operation to perform after this operation
+     * @return a composed {@code ButtonEvent} that performs in sequence this
+     * operation followed by the {@code after} operation
+     * @throws NullPointerException if {@code after} is null
+     */
     @Override
     @NotNull
     default ButtonEvent andThen(@NotNull Consumer<? super InventoryClickEvent> after) {

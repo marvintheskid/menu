@@ -14,6 +14,8 @@ import java.util.function.Function;
  * @author marvin
  *
  * @see Menu
+ *
+ * @since 1.0
  */
 public class SimpleMenu extends Menu {
     private final Function<Player, Map<Integer, Button>> buttonFunction;

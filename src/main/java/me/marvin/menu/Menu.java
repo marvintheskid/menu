@@ -23,6 +23,8 @@ import java.util.Map;
  * @see ButtonInteractionListener
  * @see InventoryHolder
  * @see Button
+ *
+ * @since 1.0
  */
 public abstract class Menu implements InventoryHolder {
     private static final char ALTERNATE_COLOR_CHAR = '&';
