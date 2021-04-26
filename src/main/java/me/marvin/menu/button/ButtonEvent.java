@@ -23,7 +23,7 @@ import java.util.function.Consumer;
 @FunctionalInterface
 public interface ButtonEvent {
     /**
-     * A simple {@link ButtonEvent} which cancels every interaction given towards the desired button
+     * A simple {@link ButtonEvent} which cancels every interaction made on the button.
      */
     ButtonEvent CANCELLING_EVENT = (evt) -> {
         evt.setCancelled(true);
