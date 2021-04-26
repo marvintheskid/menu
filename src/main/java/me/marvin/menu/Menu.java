@@ -8,7 +8,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.InventoryView;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
@@ -28,6 +30,25 @@ import java.util.Map;
  */
 public abstract class Menu implements InventoryHolder {
     private static final char ALTERNATE_COLOR_CHAR = '&';
+
+    /**
+     * Returns the menu what the player have opened.
+     * @param player the player
+     * @param <M> the type of the menu
+     * @return the currently open menu, or null
+     * @since 1.2
+     */
+    @Nullable
+    @SuppressWarnings("unchecked")
+    public static <M extends Menu> M getCurrent(Player player) {
+        InventoryView view = player.getOpenInventory();
+
+        if (!(view.getTopInventory() instanceof Menu)) {
+            return null;
+        }
+
+        return (M) view.getTopInventory();
+    }
 
     /**
      * The inventory held by this object.
