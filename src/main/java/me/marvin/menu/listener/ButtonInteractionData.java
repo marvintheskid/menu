@@ -20,7 +20,7 @@ public class ButtonInteractionData implements Cancellable {
     @NotNull private final InventoryClickEvent event;
     @NotNull private final Menu menu;
 
-    public ButtonInteractionData(@NotNull InventoryClickEvent event, @NotNull Menu menu) {
+    protected ButtonInteractionData(@NotNull InventoryClickEvent event, @NotNull Menu menu) {
         this.event = event;
         this.menu = menu;
     }
