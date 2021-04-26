@@ -38,7 +38,7 @@ dependencies {
 }
 
 shadowJar {
-    getArchiveClassifier().set('')
+    setClassifier('')
 
     relocate("org.intellij", "me.marvin.menu.shaded.org.intellij")
     relocate("org.jetbrains", "me.marvin.menu.shaded.org.jetbrains")
