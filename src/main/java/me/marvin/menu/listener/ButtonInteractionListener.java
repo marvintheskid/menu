@@ -42,10 +42,10 @@ public class ButtonInteractionListener implements Listener {
 
         if (button.isStrict()) {
             if (button.getItem().isSimilar(inventory.getItem(event.getSlot()))) {
-                buttonEvent.accept(event);
+                buttonEvent.accept(new ButtonInteractionData(event, menu));
             }
         } else {
-            buttonEvent.accept(event);
+            buttonEvent.accept(new ButtonInteractionData(event, menu));
         }
     }
 }

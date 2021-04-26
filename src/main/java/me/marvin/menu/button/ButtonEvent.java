@@ -1,8 +1,8 @@
 package me.marvin.menu.button;
 
 import me.marvin.menu.listener.ButtonInteractionListener;
+import me.marvin.menu.listener.ButtonInteractionData;
 import org.bukkit.event.Event;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
@@ -20,7 +20,7 @@ import java.util.function.Consumer;
  *
  * @since 1.0
  */
-public interface ButtonEvent extends Consumer<InventoryClickEvent> {
+public interface ButtonEvent extends Consumer<ButtonInteractionData> {
     /**
      * A simple {@link ButtonEvent} which cancels every interaction given towards the desired button
      */
@@ -48,7 +48,7 @@ public interface ButtonEvent extends Consumer<InventoryClickEvent> {
      */
     @Override
     @NotNull
-    default ButtonEvent andThen(@NotNull Consumer<? super InventoryClickEvent> after) {
+    default ButtonEvent andThen(@NotNull Consumer<? super ButtonInteractionData> after) {
         Objects.requireNonNull(after);
         return (t) -> {
             accept(t);
