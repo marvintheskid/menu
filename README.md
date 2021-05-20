@@ -1,5 +1,6 @@
 # menu
 A simplistic Bukkit GUI / Menu API using the InventoryHolder interface.
+TODO: rewrite / cleanup the readme
 
 ## Usage
 ### Basics
